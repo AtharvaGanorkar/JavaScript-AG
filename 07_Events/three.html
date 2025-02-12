@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Atharva aur javaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    let intervalID;
+
+    const sayDate = (str)=>{
+        console.log(str,"Atharva", Date.now());
+    };
+    document.querySelector('#start').addEventListener('click',()=>{
+       if (!intervalID) { // Prevent multiple intervals
+            intervalID = setInterval(sayDate, 1000, "hi");
+        }
+    });
+    
+    
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearInterval(intervalID)
+        intervalID = null;
+    })
+    
+</script>
+</html>
